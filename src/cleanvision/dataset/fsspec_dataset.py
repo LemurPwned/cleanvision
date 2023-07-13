@@ -71,7 +71,7 @@ class FSDataset(Dataset):
             # lower depths
             path_lower_level = os.path.join(dataset_path, "**", ext)
             for fs_path in (path_top_level, path_lower_level):
-                filetype_images = self.fs.glob(fs_path, **self.storage_opts)
+                filetype_images = self.fs.glob(fs_path)
                 if len(filetype_images) == 0:
                     continue
                 filepaths += filetype_images
